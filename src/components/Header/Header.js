@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './Header.css';
 
 export default class Header extends Component {
   render() {
     return(
-      <header>
-        <h1>Recipe-Planner</h1>
+      <header className='header'>
+        <h1 className='page-title'>Meal Planner</h1>
       </header>
     )
   }

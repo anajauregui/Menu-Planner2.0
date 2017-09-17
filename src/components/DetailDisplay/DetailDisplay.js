@@ -25,16 +25,18 @@ class DetailDisplay extends Component {
 
       return(
         <div className='detail-view'>
-          <div className='info-picture'>
-            <h2>{name}</h2>
-            <img src={imgUrl}/>
-            <p>Total Cook Time: {totalTime}</p>
-            <p>Rating: {rating}/5</p>
-            <button onClick={() => window.open(url)}>See recipe instructions</button>
+          <div className='recipe-detail-info'>
+            <h2 className='recipe-name'>{name}</h2>
+            <img className='recipe-image' src={imgUrl}/>
+            <div className='time-rating'>
+              <p>Total Cook Time: {totalTime}</p>
+              <p>Rating: {rating}/5</p>
+              <button onClick={() => window.open(url)}>See recipe instructions</button>
+            </div>
           </div>
           <div className='ingredient-list'>
-            <div className='num-servings-print'>Number of Servings: {numberOfServings}
-              <button onClick={ () => window.print() }>Print</button>
+            <div className='num-servings-print'> Number of Servings: {numberOfServings}
+              <button onClick={() => window.print()}>Print</button>
             </div>
             {ingredients}
           </div>
@@ -43,7 +45,7 @@ class DetailDisplay extends Component {
     }
 
     return(
-      <div>Waiting...</div>
+      <div>Gathering your recipe details...</div>
     )
 
   }

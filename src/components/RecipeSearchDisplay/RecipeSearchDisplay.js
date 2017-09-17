@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecipeDetailContainer from '../../containers/RecipeDetailContainer';
 import SearchContainer from '../../containers/SearchContainer';
+import './RecipeSearchDisplay.css';
 
 class RecipeSearchDisplay extends Component {
   constructor() {
@@ -20,28 +21,37 @@ class RecipeSearchDisplay extends Component {
     if (this.props.searchResults.recipeSearchData) {
       const searchResults = this.props.searchResults.recipeSearchData.map((recipe, i) => {
 
+        const divStyle = {
+          backgroundImage: `url(${recipe.smallImageUrls[0]})`,
+        }
+
         return (
-          <div className='recipe-search-results' key={recipe.id} onClick={ () => {
-            this.props.changeRoute(`/recipe-details/${recipe.id}`);
-            this.getRecipeId(recipe.id)
-          } }>
-            <h3>{recipe.recipeName}</h3>
-            <img src={recipe.smallImageUrls[0]} alt='recipes'/>
-            <p>Total Time: {recipe.totalTimeInSeconds / 60}</p>
-            <p>Rating: {recipe.rating}</p>
+          <div className='recipe'>
+            <h3 className='recipe-name'>{recipe.recipeName}</h3>
+            <div className='recipe-search-results' style={divStyle} key={recipe.id} onClick={ () => {
+              this.props.changeRoute(`/recipe-details/${recipe.id}`);
+              this.getRecipeId(recipe.id) } }>
+              {/* <div className='recipe-background'></div> */}
+              {/* <h3 className='recipe-name'>{recipe.recipeName}</h3> */}
+              {/* <img className='search-image' src={recipe.smallImageUrls[0]} alt='recipes'/> */}
+              <div className='time-rating'>
+                <p>Total Time: {recipe.totalTimeInSeconds / 60}</p>
+                <p>Rating: {recipe.rating}</p>
+              </div>
+            </div>
           </div>
         )
       })
 
       return(
-        <div>
+        <div className='recipe-results-container'>
           {searchResults}
         </div>
       )
     }
 
     return(
-      <div>No searches yet...</div>
+      <div>Searching for your delicious results...</div>
     )
 
   }

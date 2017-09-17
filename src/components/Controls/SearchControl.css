@@ -1,0 +1,19 @@
+.search-field {
+  width: 100%;
+}
+
+
+.recipe-search {
+  background: none;
+  color: #FFF;
+  font-size: 1.5em;
+  /*border: none;*/
+  outline: none;
+  height: 50px;
+  width: 45%;
+}
+
+.search-btn {
+  background: none;
+  color: #FFF;
+}
