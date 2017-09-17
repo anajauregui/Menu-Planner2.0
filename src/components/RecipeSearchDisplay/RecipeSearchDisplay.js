@@ -24,7 +24,6 @@ class RecipeSearchDisplay extends Component {
           <div className='recipe-search-results' key={recipe.id} onClick={ () => {
             this.props.changeRoute(`/recipe-details/${recipe.id}`);
             this.getRecipeId(recipe.id)
-
           } }>
             <h3>{recipe.recipeName}</h3>
             <img src={recipe.smallImageUrls[0]} alt='recipes'/>

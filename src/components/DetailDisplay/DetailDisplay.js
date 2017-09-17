@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecipeDetailContainer from '../../containers/RecipeDetailContainer';
 import SearchContainer from '../../containers/SearchContainer';
+import './DetailDisplay.css'
 
 class DetailDisplay extends Component {
 
@@ -10,12 +11,10 @@ class DetailDisplay extends Component {
 
   render() {
 
-    console.log('Details', this.props);
-
     if(this.props.recipeDetails.isDetailRequested) {
-      const { name, totalTime, rating, numberOfServings, ingredientLines, images, source } = this.props.recipeDetails.recipeDetails
+      const { name, totalTime, rating, numberOfServings, ingredientLines, images} = this.props.recipeDetails.recipeDetails
       const imgUrl = images[0].hostedLargeUrl
-      const sourceUrl = this.props.recipeDetails.recipeDetails.source.SourceRecipeUrl
+      const url = this.props.recipeDetails.recipeDetails.source.sourceRecipeUrl
       const ingredients = ingredientLines.map((ingredientLine, i) => {
         return (
           <ul key={i}>
@@ -23,19 +22,22 @@ class DetailDisplay extends Component {
           </ul>
         )
       })
-console.log(sourceUrl);
+
       return(
-        <div>
-          <h2>{name}</h2>
-          <img src={imgUrl}/>
-          <p>Total Cook Time: {totalTime}</p>
-          <p>Rating: {rating}/5</p>
-          <div>
-            <p>Number of Servings: {numberOfServings}</p>
-            <button onClick={ () => window.print() }>Print</button>
+        <div className='detail-view'>
+          <div className='info-picture'>
+            <h2>{name}</h2>
+            <img src={imgUrl}/>
+            <p>Total Cook Time: {totalTime}</p>
+            <p>Rating: {rating}/5</p>
+            <button onClick={() => window.open(url)}>See recipe instructions</button>
           </div>
-          <div>{ingredients}</div>
-          <button onClick={ () => window.open(sourceUrl) }>See recipe instructions</button>
+          <div className='ingredient-list'>
+            <div className='num-servings-print'>Number of Servings: {numberOfServings}
+              <button onClick={ () => window.print() }>Print</button>
+            </div>
+            {ingredients}
+          </div>
         </div>
       )
     }

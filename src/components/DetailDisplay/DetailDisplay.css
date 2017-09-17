@@ -1,0 +1,14 @@
+.detail-view {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.detail-view ul {
+  list-style: none;
+}
+
+.ingredient-list {
+  text-align: left;
+}
