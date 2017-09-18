@@ -43,6 +43,11 @@
 
 .close-tab {
   color: #F93F23;
+  text-align: right;
+}
+
+.close-tab:hover {
+  cursor: pointer;
 }
 
 .print-btn-container {
