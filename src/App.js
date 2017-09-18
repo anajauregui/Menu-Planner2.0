@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Link, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SearchControl from './components/Controls/SearchControl';
 import RecipeSearchDisplay from './components/RecipeSearchDisplay/RecipeSearchDisplay';

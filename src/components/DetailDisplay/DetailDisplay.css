@@ -15,6 +15,10 @@
   margin-right: 30px;
 }
 
+.extra-details-instructions button {
+  cursor: pointer;
+}
+
 .recipe-name {
   color: #F93F23;
 }
@@ -28,7 +32,7 @@
 }
 
 .print-btn {
-  margin-left: 10px;
+  cursor: pointer;
 }
 
 .ingredient-list {

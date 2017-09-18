@@ -31,7 +31,7 @@ class DetailDisplay extends Component {
         <div className='detail-view'>
           <div className='recipe-detail-info'>
             <h2 className='recipe-name'>{name}</h2>
-            <img className='recipe-image' src={imgUrl}/>
+            <img className='recipe-image' src={imgUrl} alt='recipe display'/>
             <div className='extra-details-instructions'>
               <p>Total Cook Time: {totalTime}</p>
               <p>Rating: {rating} / 5</p>

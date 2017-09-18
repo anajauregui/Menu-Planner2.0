@@ -26,14 +26,11 @@ class RecipeSearchDisplay extends Component {
         }
 
         return (
-          <div className='recipe'>
+          <div className='recipe' key={recipe.id} >
             <h3 className='recipe-names'>{recipe.recipeName}</h3>
-            <div className='recipe-search-results' style={divStyle} key={recipe.id} onClick={ () => {
+            <div className='recipe-search-results' style={divStyle} onClick={ () => {
               this.props.changeRoute(`/recipe-details/${recipe.id}`);
               this.getRecipeId(recipe.id) } }>
-              {/* <div className='recipe-background'></div> */}
-              {/* <h3 className='recipe-name'>{recipe.recipeName}</h3> */}
-              {/* <img className='search-image' src={recipe.smallImageUrls[0]} alt='recipes'/> */}
               <div className='time-rating'>
                 <p>Total Time: {recipe.totalTimeInSeconds / 60} min</p>
                 <p>Rating: {recipe.rating} / 5</p>

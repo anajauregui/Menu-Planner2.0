@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import { fetchRecipeDetails, recipeSearchSelect, selectedRecipeId } from '../actions/index-actions';
+import { fetchRecipeDetails } from '../actions/index-actions';
 
 const mapStateToProps = (store) => {
   return {
