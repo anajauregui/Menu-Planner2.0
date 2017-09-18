@@ -9,6 +9,10 @@ class DetailDisplay extends Component {
     this.props.fetchRecipeDetails(`http://api.yummly.com/v1/api/recipe/${this.props.selectedRecipeId}?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59`)
   }
 
+  backToSearch() {
+    this.props.changeRoute('/recipe-search')
+  }
+
   render() {
 
     if(this.props.recipeDetails.isDetailRequested) {
@@ -30,13 +34,13 @@ class DetailDisplay extends Component {
             <img className='recipe-image' src={imgUrl}/>
             <div className='extra-details-instructions'>
               <p>Total Cook Time: {totalTime}</p>
-              <p>Rating: {rating}/5</p>
+              <p>Rating: {rating} / 5</p>
               <button onClick={() => window.open(url)}>See recipe instructions</button>
             </div>
           </div>
           <div className='ingredient-list'>
+            <div onClick={() => this.backToSearch()}><p className='close-tab'>[X]</p></div>
             <div className='num-servings-print'> Number of Servings: {numberOfServings}
-            {/* <p className='close-tab'>[X]</p> */}
             </div>
             {ingredients}
             <div className='print-btn-container'>

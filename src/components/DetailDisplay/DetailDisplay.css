@@ -41,6 +41,11 @@
   margin-top: 100px;
 }
 
-/*.close-tab {
+.close-tab {
   color: #F93F23;
-}*/
+}
+
+.print-btn-container {
+  justify-content: center;
+  display: flex;
+}
