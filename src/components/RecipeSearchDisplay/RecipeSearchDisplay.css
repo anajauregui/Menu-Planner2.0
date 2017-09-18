@@ -4,7 +4,8 @@
 
 .search-results-container {
   background-color: #FCF9F3;
-  height: 85vh;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .search-results-view .search-field {
