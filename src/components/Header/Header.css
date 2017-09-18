@@ -1,10 +1,11 @@
 .header {
-  background-color: #FFDC4E;
-  color: black;
+  background-color: #FAFAFA;
   height: 15vh;
 }
 
 .page-title {
+  color: #F93F23;
+  font-size: 3em;
   padding-top: 40px;
   margin: 0;
 }

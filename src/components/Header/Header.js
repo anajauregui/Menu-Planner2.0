@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return(
       <header className='header'>
-        <h1 className='page-title'>Meal Planner</h1>
+        <h1 className='page-title'>Meal Planning Fix</h1>
       </header>
     )
   }

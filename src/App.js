@@ -17,7 +17,7 @@ class App extends Component {
         {/* <Route exact path={eitherPath} component={SearchControl} /> */}
         <Route exact path='/' render={() => <div className='initial-search-background'><SearchControl /></div>} />
         <Route exact path='/recipe-search' render={ () =>
-          <div>
+          <div className='search-results-container'>
             <div className='search-results-view'>
               <SearchControl />
             </div>

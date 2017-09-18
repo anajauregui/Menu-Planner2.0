@@ -1,5 +1,18 @@
+.header {
+  border-bottom: 2px solid #FAEDCA;
+}
+
+.search-results-container {
+  background-color: #FCF9F3;
+  height: 85vh;
+}
+
+.search-results-view .search-field {
+  padding-top: 100px;
+}
+
 .recipe {
-  margin: 15px;
+  margin: 30px;
   width: 15%;
 }
 

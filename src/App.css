@@ -16,11 +16,19 @@
   opacity: 0.6;
 }
 
-.recipe-search-display {
-  /*display: flex;*/
-  /*flex-direction: column;*/
+.search-field {
+  padding-top: 200px;
 }
-/*.recipe-search-results {
+
+/*.search-results-view .search-field {
+  padding-top: 100px;
+}*/
+
+/*.recipe-search-display {
+  display: flex;
+  flex-direction: column;
+}
+.recipe-search-results {
   display: flex;
   flex-direction: row;
 

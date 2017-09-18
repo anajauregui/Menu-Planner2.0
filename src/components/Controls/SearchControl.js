@@ -40,7 +40,7 @@ class SearchControl extends Component {
 
     return (
       <div className='search-field'>
-        <input className='recipe-search' placeholder='Search' type='text' value={this.state.recipeSearch} onChange={ (e) => this.userRecipeSearch(e) } autoFocus/>
+        <input className='recipe-search' placeholder='What would you like to cook?' type='text' value={this.state.recipeSearch} onChange={ (e) => this.userRecipeSearch(e) } autoFocus/>
         <button className='search-btn' onClick={ () => ((this.promptRecipeSearch(), this.props.changeRoute('/recipe-search'), this.clearInputField())) }>
           Search
         </button>
