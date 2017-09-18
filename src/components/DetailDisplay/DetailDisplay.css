@@ -1,14 +1,46 @@
+.header {
+  background-color: #FAFAFA;
+}
+
 .detail-view {
   align-items: center;
+  background-color: #FCF9F3;
   display: flex;
   flex-direction: row;
+  height: 85vh;
   justify-content: center;
+}
+
+.recipe-detail-info {
+  margin-right: 30px;
+}
+
+.recipe-name {
+  color: #F93F23;
 }
 
 .detail-view ul {
   list-style: none;
 }
 
+.num-servings-print {
+  text-align: center;
+}
+
+.print-btn {
+  margin-left: 10px;
+}
+
 .ingredient-list {
   text-align: left;
+  margin-left: 30px;
 }
+
+.waiting {
+  font-size: 1.5em;
+  margin-top: 100px;
+}
+
+/*.close-tab {
+  color: #F93F23;
+}*/

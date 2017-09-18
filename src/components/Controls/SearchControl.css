@@ -3,21 +3,24 @@
 }
 
 .recipe-search {
-  background: none;
-  color: #FFF;
+  background: #FAFAFA;
+  border: 1px solid slategrey;
+  color: #F93F23;
   font-size: 1.5em;
-  /*border: none;*/
   outline: none;
   padding-left: 15px;
   height: 50px;
+  opacity: 0.9;
   width: 45%;
 }
 
 .search-btn {
-  background: none;
-  color: #FFF;
+  background: #FAFAFA;
+  border: 1px solid slategrey;
+  color: black;
   font-size: 1em;
   height: 40px;
+  opacity: 0.9;
   margin-left: 30px;
   width: 80px;
 }

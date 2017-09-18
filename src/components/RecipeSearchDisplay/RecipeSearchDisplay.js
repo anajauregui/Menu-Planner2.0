@@ -27,7 +27,7 @@ class RecipeSearchDisplay extends Component {
 
         return (
           <div className='recipe'>
-            <h3 className='recipe-name'>{recipe.recipeName}</h3>
+            <h3 className='recipe-names'>{recipe.recipeName}</h3>
             <div className='recipe-search-results' style={divStyle} key={recipe.id} onClick={ () => {
               this.props.changeRoute(`/recipe-details/${recipe.id}`);
               this.getRecipeId(recipe.id) } }>
@@ -35,8 +35,9 @@ class RecipeSearchDisplay extends Component {
               {/* <h3 className='recipe-name'>{recipe.recipeName}</h3> */}
               {/* <img className='search-image' src={recipe.smallImageUrls[0]} alt='recipes'/> */}
               <div className='time-rating'>
-                <p>Total Time: {recipe.totalTimeInSeconds / 60}</p>
-                <p>Rating: {recipe.rating}</p>
+                <p>Total Time: {recipe.totalTimeInSeconds / 60} min</p>
+                <p>Rating: {recipe.rating} / 5</p>
+                <p>Click for Recipe Details</p>
               </div>
             </div>
           </div>
@@ -51,7 +52,7 @@ class RecipeSearchDisplay extends Component {
     }
 
     return(
-      <div>Searching for your delicious results...</div>
+      <div className='waiting'>Searching for your delicious results...</div>
     )
 
   }
