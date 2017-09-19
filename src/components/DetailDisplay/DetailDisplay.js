@@ -13,20 +13,29 @@ class DetailDisplay extends Component {
     this.props.changeRoute('/recipe-search')
   }
 
+  cleanUpDuplicateIngredients(ingredientArray) {
+    return ingredientArray.filter((elem, i, arr) => {
+      return arr.indexOf(elem) === i
+    })
+  }
+
   render() {
 
     if(this.props.recipeDetails.isDetailRequested) {
       const { name, totalTime, rating, numberOfServings, ingredientLines, images} = this.props.recipeDetails.recipeDetails
+
       const imgUrl = images[0].hostedLargeUrl
       const url = this.props.recipeDetails.recipeDetails.source.sourceRecipeUrl
-      const ingredients = ingredientLines.map((ingredientLine, i) => {
+      const ingredients = this.cleanUpDuplicateIngredients(ingredientLines)
+
+      ingredients.map((ingredientLine, i) => {
         return (
           <ul key={i}>
             <li>{ingredientLine}</li>
           </ul>
         )
       })
-
+//make a cleanUp array = [].. if indexOf(ing => ing === -1) cleanUpArray.push(ing)
       return(
         <div className='detail-view'>
           <div className='recipe-detail-info'>

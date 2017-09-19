@@ -11,10 +11,7 @@ export const fetchRecipeSearchData = (url) => {
   return dispatch => {
     fetch(url)
       .then(response => response.json())
-      .then(data => {
-        dispatch(recipeSearch(data.matches))
-      })
-      .then(result => console.log(result))
+      .then(data => dispatch(recipeSearch(data.matches)))
       .catch(error => console.log(error))
   }
 }
@@ -38,10 +35,7 @@ export const fetchRecipeDetails = (url) => {
   return dispatch => {
     fetch(url)
       .then(response => response.json())
-      .then(data => {
-        dispatch(getRecipeDetail(data))
-      })
-      .then(data => console.log(data))
+      .then(data => dispatch(getRecipeDetail(data)))
       .catch(error => console.log(error))
   }
 }

@@ -28,13 +28,6 @@ export const storeSelectedRecipeId = (state = '', action) => {
   }
 }
 
-
-// const getRecipeDetailState = {
-//   recipeDetails: null,
-//   selectedRecipeId: ''
-//   isDetailRequested: false
-// }
-
 export const getRecipeDetail = (state = {}, action) => {
   switch (action.type) {
     case 'GET_RECIPE_DETAIL':
