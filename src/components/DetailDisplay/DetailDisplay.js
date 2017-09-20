@@ -27,13 +27,14 @@ class DetailDisplay extends Component {
 
       const imgUrl = images[0].hostedLargeUrl
       const url = this.props.recipeDetails.recipeDetails.source.sourceRecipeUrl
-      const ingredients = this.cleanUpDuplicateIngredients(ingredientLines).map((ingredientLine, i) => {
-        return (
-          <ul key={i}>
-            <li>{ingredientLine}</li>
-          </ul>
-        )
-      })
+      const ingredients =
+        this.cleanUpDuplicateIngredients(ingredientLines).map((ingredientLine, i) => {
+          return (
+            <ul key={i}>
+              <li>{ingredientLine}</li>
+            </ul>
+          )
+        })
 
       return(
         <div className='detail-view'>
@@ -60,7 +61,9 @@ class DetailDisplay extends Component {
     }
 
     return(
-      <div className='waiting'>Tell us what you would like to cook, so we can provide you with delicious results...</div>
+      <div className='waiting'>
+        <p>Tell us what you would like to cook, so we can provide you with delicious results...</p>
+      </div>
     )
 
   }

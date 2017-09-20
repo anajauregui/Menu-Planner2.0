@@ -2,6 +2,7 @@ import * as action from './index-actions';
 import mockRecipeSearch from './mockRecipeSearch';
 import mockRecipeDetails from './mockRecipeDetails'
 import fetchMock from 'fetch-mock';
+// import {fetchRecipeSearchData, fetchRecipeDetails} from './index-actions';
 
 
 describe('recipeSearch', () => {
@@ -74,18 +75,19 @@ describe('storeUserSearch', () => {
 describe('fetchRecipeSearchData', () => {
 
   it('gets the corresponding recipe search data', () => {
-    fetchMock.get('http://api.yummly.com/v1/api/recipes?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59&q=pizza', {
+    const URL = 'http://api.yummly.com/v1/api/recipes?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59&q=pizza'
+
+    fetchMock.get(URL, {
       status: 200,
       body: mockRecipeSearch
     })
 
-    console.log('fo real tho ', fetchMock);
 
-
-
+  action.fetchRecipeSearchData(URL);
+  console.log('fetchRecipeSearchData', fetchMock);
   expect(fetchMock.routes[0].method).toEqual('GET');
-  // expect(fetchMock._matchedCalls.length).toEqual(0);
-  // expect(fetchMock.routes[0].response.body).toEqual(mockRecipeSearch)
+  expect(fetchMock._matchedCalls.length).toEqual(0);
+  expect(fetchMock.routes[0].response.body).toEqual(mockRecipeSearch)
   })
 })
 
@@ -124,24 +126,27 @@ describe('storeSelectedRecipeId', () => {
 describe('fetchRecipeDetails', () => {
 
   it('should return the details of a selected recipe from initial search', () => {
-    const URL = `http://api.yummly.com/v1/api/recipe/Chicken-Pesto-Pizza-2127754?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59`
+    const URL = 'http://api.yummly.com/v1/api/recipe/Chicken-Pesto-Pizza-2127754?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59'
+
     fetchMock.get(URL, {
       status: 200,
       body: mockRecipeDetails
     })
 
-    //set variables for each:
-    //find the input (by class or by 'input' if it's the only one on the dom)
-    //find the button
-
-    //simulate event in the input (and pass word pizza)
-    //simulate a click of the button
-
-    //expect(fetchMock.lastURL().toEqual(URL))
-
+  action.fetchRecipeDetails(URL)
+  console.log(fetchMock.lastUrl());
   expect(fetchMock.routes[0].method).toEqual('GET');
-  // expect(fetchMock._matchedCalls.length).toEqual(0);
-  // expect(fetchMock.routes[0].response.body).toEqual(mockRecipeDetails)
+  expect(fetchMock._matchedCalls.length).toEqual(0);
+  expect(fetchMock.routes[0].response.body).toEqual(mockRecipeDetails)
+  })
+})
 
-})
-})
+
+//set variables for each:
+//find the input (by class or by 'input' if it's the only one on the dom)
+//find the button
+
+//simulate event in the input (and pass word pizza)
+//simulate a click of the button
+
+//expect(fetchMock.lastURL().toEqual(URL))
