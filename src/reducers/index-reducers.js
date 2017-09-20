@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import { recipeSearch, getRecipeDetail, storeSelectedRecipeId} from './reducers';
+import { recipeSearch, getRecipeDetail, storeSelectedRecipeId, storeUserSearch} from './reducers';
 
 const rootReducer = combineReducers({
   recipeSearch,
   getRecipeDetail,
-  storeSelectedRecipeId
+  storeSelectedRecipeId,
+  storeUserSearch
 })
 
 export default rootReducer
