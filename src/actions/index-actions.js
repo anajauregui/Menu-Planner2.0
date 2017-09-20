@@ -7,6 +7,13 @@ export const recipeSearch = (recipeSearchData, recipeIds, isSearchComplete) => {
   }
 }
 
+export const storeUserSearch = (userSearchParam) => {
+  return {
+    type: 'STORE_USER_SEARCH',
+    userSearchParam
+  }
+}
+
 export const fetchRecipeSearchData = (url) => {
   return dispatch => {
     fetch(url)

@@ -18,6 +18,16 @@ export const recipeSearch = (state = initialState, action) => {
   }
 }
 
+export const storeUserSearch = (state = '', action) => {
+  switch (action.type) {
+    case 'STORE_USER_SEARCH':
+      return action.userSearchParam
+
+    default:
+      return state
+  }
+}
+
 export const storeSelectedRecipeId = (state = '', action) => {
   switch (action.type) {
     case 'STORE_SELECTED_RECIPE_ID':

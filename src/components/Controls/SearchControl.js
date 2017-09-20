@@ -19,6 +19,10 @@ class SearchControl extends Component {
   })
 }
 
+  saveSearch(userSearchParam) {
+    this.props.saveUserSearch(userSearchParam)
+  }
+
   allowEnterBtn(e) {
     if (e.keyCode === 13) {
       this.promptRecipeSearch();
@@ -36,6 +40,7 @@ class SearchControl extends Component {
 
     this.props.fetchRecipeSearch(`http://api.yummly.com/v1/api/recipes?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59&q=${userSearch}`);
 
+    this.saveSearch(this.state.recipeSearch);
     this.props.changeRoute('/recipe-search');
     this.clearInputField();
   }
