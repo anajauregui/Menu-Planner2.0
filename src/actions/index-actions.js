@@ -19,6 +19,7 @@ export const fetchRecipeSearchData = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(data => dispatch(recipeSearch(data.matches)))
+      .then(response => console.log(response))
       .catch(error => console.log(error))
   }
 }

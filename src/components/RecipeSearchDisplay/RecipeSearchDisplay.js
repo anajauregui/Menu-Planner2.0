@@ -41,6 +41,14 @@ class RecipeSearchDisplay extends Component {
       )
     }
 
+    if (this.props.searchResults.isSearchComplete && this.props.searchResults.recipeSearchData.length === 0) {
+      return(
+        <div>
+          Not sure what you meant... Please try again with another recipe or ingredients.
+        </div>
+      )
+    }
+
     return(
       <div className='waiting'>No search results</div>
     )
