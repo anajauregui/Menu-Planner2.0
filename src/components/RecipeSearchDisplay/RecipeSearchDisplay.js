@@ -4,13 +4,6 @@ import SearchContainer from '../../containers/SearchContainer';
 import './RecipeSearchDisplay.css';
 
 class RecipeSearchDisplay extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      selectedRecipeId: ''
-    }
-  }
 
   getRecipeId(recipeId) {
     this.props.storeRecipeId(recipeId)

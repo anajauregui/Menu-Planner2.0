@@ -5,7 +5,9 @@ import fetchMock from 'fetch-mock';
 
 
 describe('recipeSearch', () => {
+
   it('recipeSearch should fetch initial recipe search data', () => {
+
     const recipeSearchData = [{
 "imageUrlsBySize": {
 "90": "http://lh3.googleusercontent.com/889XHLs682MRuPg1QU5Ahl4N4V1LbqlQBNP3BVJx8zkDHRCCF9qcwb-KOx70y6kWMK6agK3VBA6375SSDTzZ=s90-c"
@@ -54,7 +56,23 @@ const isSearchComplete = true
   })
 })
 
+describe('storeUserSearch', () => {
+
+  it('should store recipeSearch entered by user', () => {
+
+    const userSearchParam = 'pizza'
+
+    const expectedAction = {
+      type: 'STORE_USER_SEARCH',
+      userSearchParam
+    }
+
+    expect(action.storeUserSearch(userSearchParam)).toEqual(expectedAction)
+  })
+})
+
 describe('fetchRecipeSearchData', () => {
+
   it('gets the corresponding recipe search data', () => {
     fetchMock.get(`http://api.yummly.com/v1/api/recipes?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59&q=pizza`, {
       status: 200,
@@ -68,6 +86,7 @@ console.log('fetchMock',fetchMock);
 })
 
 describe('getRecipeDetail', () => {
+
   it('should provide details about selected recipe from search', () => {
 
     const recipeDetails = mockRecipeDetails
@@ -84,6 +103,7 @@ describe('getRecipeDetail', () => {
 })
 
 describe('storeSelectedRecipeId', () => {
+
   it('store the Id of the recipe selected by the user', () => {
 
     const recipeId = "Chicken-Pesto-Pizza-2127754"
@@ -98,6 +118,7 @@ describe('storeSelectedRecipeId', () => {
 })
 
 describe('fetchRecipeDetails', () => {
+
   it('should return the details of a selected recipe from initial search', () => {
     fetchMock.get(`http://api.yummly.com/v1/api/recipe/Chicken-Pesto-Pizza-2127754?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59`, {
       status: 200,

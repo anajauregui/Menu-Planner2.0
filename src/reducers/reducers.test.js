@@ -67,6 +67,26 @@ describe('recipeSearch reducer', () => {
   expect(reducers.recipeSearch(undefined, recipeSearch)).toEqual(expectedResponse)
   })
 
+  describe('storeUserSearch', () => {
+
+    it('should have an initial state', () => {
+
+      expect(reducers.storeUserSearch(undefined, '')).toEqual('')
+    })
+
+    it('should store the parameter user searches for', () => {
+
+      const userSearchParam = 'pizza'
+
+      const storeSearch = {
+        type: 'STORE_USER_SEARCH',
+        userSearchParam
+      }
+
+      expect(reducers.storeUserSearch(undefined, storeSearch)).toEqual(userSearchParam)
+    })
+  })
+
   describe('storeSelectedRecipeId reducer', () => {
 
     it('should have an initial state', () => {
