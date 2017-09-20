@@ -42,7 +42,7 @@ class RecipeSearchDisplay extends Component {
     }
 
     return(
-      <div className='waiting'>Searching for your delicious results...</div>
+      <div className='waiting'>No search results</div>
     )
 
   }

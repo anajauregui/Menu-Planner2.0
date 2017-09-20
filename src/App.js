@@ -9,12 +9,10 @@ import './App.css';
 class App extends Component {
 
   render() {
-    // const eitherPath = '/' || '/recipe-search'
 
     return (
       <div className='main-page'>
         <Header />
-        {/* <Route exact path={eitherPath} component={SearchControl} /> */}
         <Route exact path='/' render={() => <div className='initial-search-background'><SearchControl /></div>} />
         <Route exact path='/recipe-search' render={ () =>
           <div className='search-results-container'>

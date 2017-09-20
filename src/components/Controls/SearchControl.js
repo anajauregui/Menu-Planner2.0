@@ -46,11 +46,12 @@ class SearchControl extends Component {
   }
 
   render() {
+    const isEnabled = this.state.recipeSearch.length > 0
 
     return (
       <div className='search-field'>
         <input className='recipe-search' placeholder='What would you like to cook?' type='text' value={this.state.recipeSearch} onChange={ (e) => this.userRecipeSearch(e) } onKeyDown={ (e) => this.allowEnterBtn(e) } autoFocus/>
-        <button className='search-btn' onClick={ () => this.promptRecipeSearch() }>
+        <button className='search-btn' disabled={!isEnabled} onClick={ () => this.promptRecipeSearch() }>
           Search
         </button>
       </div>

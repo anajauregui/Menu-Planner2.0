@@ -35,7 +35,7 @@ class DetailDisplay extends Component {
           </ul>
         )
       })
-//make a cleanUp array = [].. if indexOf(ing => ing === -1) cleanUpArray.push(ing)
+
       return(
         <div className='detail-view'>
           <div className='recipe-detail-info'>
@@ -61,7 +61,7 @@ class DetailDisplay extends Component {
     }
 
     return(
-      <div className='waiting'>Gathering your recipe details...</div>
+      <div className='waiting'>Tell us what you would like to cook, so we can provide you with delicious results...</div>
     )
 
   }
