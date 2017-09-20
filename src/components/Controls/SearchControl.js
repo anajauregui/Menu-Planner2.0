@@ -46,6 +46,7 @@ class SearchControl extends Component {
   }
 
   render() {
+    console.log(this.props);
     const isEnabled = this.state.recipeSearch.length > 0
 
     return (

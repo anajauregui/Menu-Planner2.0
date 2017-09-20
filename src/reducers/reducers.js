@@ -1,5 +1,5 @@
 const initialState = {
-  recipeSearchData: null,
+  recipeSearchData: [],
   recipeIds: [],
   isSearchComplete: false
 }

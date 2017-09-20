@@ -11,7 +11,7 @@ class RecipeSearchDisplay extends Component {
 
   render() {
 
-    if (this.props.searchResults.recipeSearchData) {
+    if (this.props.searchResults.recipeSearchData.length > 0) {
       const searchResults = this.props.searchResults.recipeSearchData.map((recipe, i) => {
 
         const divStyle = {
@@ -41,8 +41,17 @@ class RecipeSearchDisplay extends Component {
       )
     }
 
+      if (this.props.searchResults.isSearchComplete && this.props.searchResults.recipeSearchData.length === 0) {
+
+        return(
+          <div className='waiting'>
+            Not sure what you meant... Please try again with another recipe or ingredients.
+          </div>
+        )
+    }
+
     return(
-      <div className='waiting'>No search results</div>
+      <div className='waiting'>No search results, please search for something delicious...</div>
     )
 
   }
