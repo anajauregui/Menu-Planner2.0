@@ -1,4 +1,4 @@
-[Menu-Planner2.0](https://media.giphy.com/media/3PCb3qIXigEtq/giphy.gif)
+![Menu-Planner2.0](https://media.giphy.com/media/3PCb3qIXigEtq/giphy.gif)
 
 <img width="1280" alt="screenshot 2017-09-21 08 20 23" src="https://user-images.githubusercontent.com/20731901/30701368-54a0bf76-9ea7-11e7-86cb-3001d13aa4da.png">
 
