@@ -4,7 +4,7 @@ import mockRecipeDetails from '../actions/mockRecipeDetails';
 describe('recipeSearch reducer', () => {
 
   const initialState = {
-    recipeSearchData: null,
+    recipeSearchData: [],
     recipeIds: [],
     isSearchComplete: false
   }

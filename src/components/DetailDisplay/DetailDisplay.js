@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import RecipeDetailContainer from '../../containers/RecipeDetailContainer';
 import SearchContainer from '../../containers/SearchContainer';
 import './DetailDisplay.css'
@@ -23,10 +24,13 @@ class DetailDisplay extends Component {
   render() {
 
     if(this.props.recipeDetails.isDetailRequested) {
+
       const { name, totalTime, rating, numberOfServings, ingredientLines, images} = this.props.recipeDetails.recipeDetails
 
       const imgUrl = images[0].hostedLargeUrl
+
       const url = this.props.recipeDetails.recipeDetails.source.sourceRecipeUrl
+
       const ingredients =
         this.cleanUpDuplicateIngredients(ingredientLines).map((ingredientLine, i) => {
           return (
@@ -49,8 +53,7 @@ class DetailDisplay extends Component {
           </div>
           <div className='ingredient-list'>
             <div onClick={() => this.backToSearch()}><p className='close-tab'>[X]</p></div>
-            <div className='num-servings-print'> Number of Servings: {numberOfServings}
-            </div>
+            <div className='num-servings-print'> Number of Servings: {numberOfServings}</div>
             {ingredients}
             <div className='print-btn-container'>
               <button className='print-btn' onClick={() => window.print()}>Print</button>
@@ -62,10 +65,11 @@ class DetailDisplay extends Component {
 
     return(
       <div className='waiting'>
-        <p>Tell us what you would like to cook, so we can provide you with delicious results...</p>
+        <Link to='/' >
+          <p className='homepage-reroute'>Click to go to Homepage to tell us what you would like to cook.</p>
+        </Link>
       </div>
     )
-
   }
 }
 

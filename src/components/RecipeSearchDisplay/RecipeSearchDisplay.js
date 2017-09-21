@@ -48,14 +48,12 @@ class RecipeSearchDisplay extends Component {
             Not sure what you meant... Please try again with another recipe or ingredients.
           </div>
         )
-    }
+      }
 
     return(
       <div className='waiting'>No search results, please search for something delicious...</div>
     )
-
   }
 }
-
 
 export default SearchContainer(RecipeDetailContainer(RecipeSearchDisplay))

@@ -2,8 +2,6 @@ import * as action from './index-actions';
 import mockRecipeSearch from './mockRecipeSearch';
 import mockRecipeDetails from './mockRecipeDetails'
 import fetchMock from 'fetch-mock';
-// import {fetchRecipeSearchData, fetchRecipeDetails} from './index-actions';
-
 
 describe('recipeSearch', () => {
 
@@ -82,12 +80,13 @@ describe('fetchRecipeSearchData', () => {
       body: mockRecipeSearch
     })
 
+  action.fetchRecipeSearchData(URL)();
 
-  action.fetchRecipeSearchData(URL);
-  console.log('fetchRecipeSearchData', fetchMock);
+
+  expect(fetchMock.lastUrl()).toEqual('http://api.yummly.com/v1/api/recipes?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59&q=pizza')
   expect(fetchMock.routes[0].method).toEqual('GET');
-  expect(fetchMock._matchedCalls.length).toEqual(0);
-  expect(fetchMock.routes[0].response.body).toEqual(mockRecipeSearch)
+  expect(fetchMock._matchedCalls.length).toEqual(1);
+  expect(fetchMock.routes[0].response.body).toEqual(mockRecipeSearch);
   })
 })
 
@@ -133,20 +132,11 @@ describe('fetchRecipeDetails', () => {
       body: mockRecipeDetails
     })
 
-  action.fetchRecipeDetails(URL)
-  console.log(fetchMock.lastUrl());
+  action.fetchRecipeDetails(URL)()
+
+  expect(fetchMock.lastUrl()).toEqual('http://api.yummly.com/v1/api/recipe/Chicken-Pesto-Pizza-2127754?_app_id=9a8c8d11&_app_key=acf75735b021b0bc07dcbfd169e21b59');
   expect(fetchMock.routes[0].method).toEqual('GET');
-  expect(fetchMock._matchedCalls.length).toEqual(0);
-  expect(fetchMock.routes[0].response.body).toEqual(mockRecipeDetails)
+  expect(fetchMock._matchedCalls.length).toEqual(2);
+  expect(fetchMock.routes[0].response.body).toEqual(mockRecipeDetails);
   })
 })
-
-
-//set variables for each:
-//find the input (by class or by 'input' if it's the only one on the dom)
-//find the button
-
-//simulate event in the input (and pass word pizza)
-//simulate a click of the button
-
-//expect(fetchMock.lastURL().toEqual(URL))
